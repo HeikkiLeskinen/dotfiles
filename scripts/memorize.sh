@@ -1,7 +1,7 @@
 #!/bin/bash
 
 HISTORY_FILE="/Users/hleskine/.zhistory"
-TARGET_FILE="/Users/hleskine/Dropbox/documents/notes/Shell command worth of remembering.md"
+TARGET_FILE="/Users/heikki/Google Drive/Documents/notes/Shell command worth of remembering.md"
 
 usage() { echo "Usage: $0 [-c <string>] [-i]" 1>&2; exit 1; }
 

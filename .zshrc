@@ -14,7 +14,7 @@ zstyle ':completion:*' menu select # select completions with arrow keys
 zstyle ':completion:*' group-name '' # group results by category
 zstyle ':completion:::::' completer _expand _complete _ignored _approximate 
 
-# Load antibody plugin manager
+# Load antibody plugin manager https://getantibody.github.io/
 source <(antibody init)
 # Plugins
 antibody bundle zdharma/fast-syntax-highlighting
@@ -28,16 +28,16 @@ autoload -U promptinit; promptinit
 # https://github.com/sindresorhus/pure
 prompt pure
 
-path=('/Users/hleskine/bin' '/opt/local/bin' '/usr/local/go/bin' '/Users/hleskine/project/go/bin' $path)
+path=('/Users/heikki/bin' '/opt/local/bin' '/usr/local/go/bin' '/Users/heikki/source/go/bin' $path)
 typeset -aU path
 
 export PATH
-
 # History settings (sharing and sizing)
 export HISTSIZE=100000
 export HISTFILESIZE=100000
 export SAVEHIST=100000
 export HISTFILE=~/.zhistory
+export GOPATH='/Users/heikki/source/go'
 
 setopt HIST_FIND_NO_DUPS
 
@@ -74,28 +74,20 @@ export PATH=$PATH:$ANDROID_HOME/tools
 export PATH=$PATH:$ANDROID_HOME/tools/bin
 export PATH=$PATH:$ANDROID_HOME/platform-tools
 
-export AWS_ACCESS_KEY_ID=AKIAITME6QP4XGII4PFA
-export AWS_SECRET_ACCESS_KEY=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
-
 # Aliases
 alias git_prune_branches='git branch --merged | egrep -v "(^\*|master)" | xargs git branch -d'
 alias terminal-notifier='/Applications/terminal-notifier.app/Contents/MacOS/terminal-notifier'
 
 alias dl='docker ps -l -q'
-alias hg='history | grep'
-alias psql='psql10'
+
+alias help='~/source/dotfiles/scripts/help.sh'
+alias mem='~/source/dotfiles/scripts/memorize.sh'
+alias fp='~/source/dotfiles/scripts/fp.sh'
+alias svim='~/source/dotfiles/scripts/svim.sh'
+alias fvim='~/source/dotfiles/scripts/fvim.sh'
+alias kp='~/source/dotfiles/scripts/kp.sh'
 
 # NVM Settings
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
 
-# tabtab source for serverless package
-# uninstall by removing these lines or running `tabtab uninstall serverless`
-[[ -f /Users/hleskine/.nvm/versions/node/v10.15.0/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.zsh ]] && . /Users/hleskine/.nvm/versions/node/v10.15.0/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.zsh
-# tabtab source for sls package
-# uninstall by removing these lines or running `tabtab uninstall sls`
-[[ -f /Users/hleskine/.nvm/versions/node/v10.15.0/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh ]] && . /Users/hleskine/.nvm/versions/node/v10.15.0/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh
-# tabtab source for slss package
-# uninstall by removing these lines or running `tabtab uninstall slss`
-[[ -f /Users/hleskine/.nvm/versions/node/v10.15.0/lib/node_modules/serverless/node_modules/tabtab/.completions/slss.zsh ]] && . /Users/hleskine/.nvm/versions/node/v10.15.0/lib/node_modules/serverless/node_modules/tabtab/.completions/slss.zsh
-if [ /usr/local/bin/kubectl ]; then source <(kubectl completion zsh); fi # add autocomplete permanently to your zsh shell

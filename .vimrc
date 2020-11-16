@@ -3,6 +3,8 @@ filetype off
 
 set encoding=utf-8
 set nu
+set tabstop=4
+set expandtab
 
 set rtp+=~/.vim/bundle/Vundle.vim
 
@@ -16,10 +18,6 @@ Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'jnurmine/Zenburn'
 Plugin 'altercation/vim-colors-solarized'
 
-Plugin 'scrooloose/nerdtree'
-Plugin 'jistr/vim-nerdtree-tabs'
-Plugin 'ctrlpvim/ctrlp.vim'
-
 Plugin 'bling/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 
@@ -27,7 +25,17 @@ Plugin 'dyng/ctrlsf.vim'
 
 call vundle#end()
 
-let NERDTreeIgnore=['\.pyc$', '\~$'] "ignore files in NERDTree
+" set up the file expolorer
+let g:netrw_banner = 0
+let g:netrw_liststyle = 3
+let g:netrw_browse_split = 4
+let g:netrw_altv = 1
+let g:netrw_winsize = 25
+
+augroup ProjectDrawer
+  autocmd!
+  autocmd VimEnter * :Vexplore
+augroup END
 
 set noswapfile
 filetype plugin indent on

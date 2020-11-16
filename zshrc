@@ -74,9 +74,6 @@ export PATH=$PATH:$ANDROID_HOME/tools
 export PATH=$PATH:$ANDROID_HOME/tools/bin
 export PATH=$PATH:$ANDROID_HOME/platform-tools
 
-export AWS_ACCESS_KEY_ID=AKIAITME6QP4XGII4PFA
-export AWS_SECRET_ACCESS_KEY=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
-
 # Aliases
 alias git_prune_branches='git branch --merged | egrep -v "(^\*|master)" | xargs git branch -d'
 alias terminal-notifier='/Applications/terminal-notifier.app/Contents/MacOS/terminal-notifier'
